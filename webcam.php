@@ -10,6 +10,15 @@
             include('check.php');
         ?>
     }
+window.onload = function() {
+    var image = document.getElementById("camimg");
+
+    function updateImage() {
+        image.src = image.src+ "?" + new Date().getTime() ;
+    }
+
+    setInterval(updateImage, 1000);
+}
 </script>
 
 <?php
@@ -25,7 +34,7 @@
         } else {
         }
        
-        $sql =<<<EOF INSERT INTO CAM_RCOMMAND (REFRESH_REQUEST) VALUES (1); EOF;
+        $sql ="INSERT INTO CAM_RCOMMAND DEFAULT VALUES;";
 
         $ret = pg_query($db, $sql);
         if(!$ret){
@@ -48,7 +57,7 @@
     <div id="page">
         <div id="sidebar">
             <?php
-                include("sidebar.php")
+                include('sidebar.php')
             ?>
         </div>
         <div id="content">
@@ -56,7 +65,8 @@
             <div class="boxed">
                 <h1 class="title2">Manual Control</h1>
                 <a href="?cam_refresh=true">REFRESH!</a>
-                <img src="./images/cimage.jpg" alt="Webcam Image">     
+                <img src="./images/cimage.jpg" id="camimg" alt="Webcam Image">  
+               <!-- <img src="jpeg.php?file=cimage.jpg" id="camimg" alt="Webcam Image"> -->
             </div>
             <div style="clear: both;">&nbsp;</div>
         </div>
@@ -67,8 +77,8 @@
 <!-- end page -->
     <div id="footer">
         <?php
-			include('footer.php');
-		?>
+            include('footer.php');
+        ?>
     </div>
 </body>
 </html>

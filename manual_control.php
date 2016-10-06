@@ -25,7 +25,7 @@
         } else {
         }
        
-        $sql =<<<EOF INSERT INTO M_OUTLET_WCOMMAND (OUTLET_NR, OUTLET_STATE) VALUES (1, 1); EOF;
+        $sql ="INSERT INTO M_OUTLET_WCOMMAND (OUTLET_NR, OUTLET_STATE) VALUES (1, 1);";
 
         $ret = pg_query($db, $sql);
         if(!$ret){
@@ -47,7 +47,7 @@
         } else {
         }
 
-        $sql =<<<EOF INSERT INTO M_OUTLET_WCOMMAND (OUTLET_NR, OUTLET_STATE) VALUES (1, 0); EOF;
+        $sql ="INSERT INTO M_OUTLET_WCOMMAND (OUTLET_NR, OUTLET_STATE) VALUES (1, 0);";
 
         $ret = pg_query($db, $sql);
         if(!$ret){
