@@ -1,8 +1,8 @@
 <?php
     include('lock.php');
 
-    $file = basename(urldecode($_GET['file']));
-    $fileDir = '/srv/http/images/';
+    $file = 'cimage.jpg';
+    $fileDir = '../resources/images/';
 
     if (file_exists($fileDir . $file))
     {

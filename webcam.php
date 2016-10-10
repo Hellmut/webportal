@@ -65,8 +65,9 @@ window.onload = function() {
             <div class="boxed">
                 <h1 class="title2">Manual Control</h1>
                 <a href="?cam_refresh=true">REFRESH!</a>
-                <img src="./images/cimage.jpg" id="camimg" alt="Webcam Image">  
-               <!-- <img src="jpeg.php?file=cimage.jpg" id="camimg" alt="Webcam Image"> -->
+                <div id="camframe">
+                    <!-- img src="./images/cimage.jpg" id="camimg" alt="Webcam Image">  -->
+                    <img src="jpeg.php" id="camimg" alt="Webcam Image">
             </div>
             <div style="clear: both;">&nbsp;</div>
         </div>
